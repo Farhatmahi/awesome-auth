@@ -1,0 +1,13 @@
+1. context api : share auth state with other components
+2. create an UserContext
+3. ContextProvider with passed children as param.
+4. set the UserContext in index.js
+5. now to consume the context : export the AuthContext from userContext
+6. Now on header or anywhere else, use the hook useContext
+    explanation : user er information to amra onekgula component e dekhaite caai tai use korbo arki. 
+
+7. onAuthStateChanged function ta duita param nibe, auth ar ekta arrow function, which will set the new user to the state.
+    onAuthStateChanged 3 vabe change hoite pare
+    1. notun user hisebe register
+    2. login
+    3. sign out
