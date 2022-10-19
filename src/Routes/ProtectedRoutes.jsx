@@ -3,7 +3,10 @@ import { Navigate } from 'react-router-dom';
 import { authContext } from '../Context/UserContext';
 
 const ProtectedRoutes = ({children}) => {
-    const {user} = useContext(authContext)
+    const {user, loading} = useContext(authContext)
+    if(loading) {
+        return <div>...Loading</div>
+    }
     if(user && user.uid){
         return children;
     }

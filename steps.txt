@@ -11,3 +11,6 @@
     1. notun user hisebe register
     2. login
     3. sign out
+
+
+8. order page e reload marle abar login korte bole, to fix this, amader userContext component e ekta state declare korte hobe jetar default value hocche true, means loading hoite thakbe. Ar jokhon authStateChange function ta trigger hobe tokhon loading false kore dite hobe. Erpor protected route e if condition diye dekhte hobe loading true kina, jodi true hoy tahole loading dekhabe ar niche nambe na, false howa matro baki gula k dekhabe

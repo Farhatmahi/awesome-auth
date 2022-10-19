@@ -25,6 +25,9 @@ const Header = () => {
         <Link to="/" className="btn btn-ghost normal-case text-md">
           Home
         </Link>
+        <Link to="/orders" className="btn btn-ghost normal-case text-md">
+          Orders
+        </Link>
         <Link to="/login" className="btn btn-ghost normal-case text-md">
           Log in
         </Link>

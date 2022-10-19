@@ -17,6 +17,7 @@ const auth = getAuth(app);
 //it will create user, take the auth from this component and email password from register
 const UserContext = ({ children }) => {
   const [user, setUser] = useState({}); //the user will change
+  const [loading, setLoading] = useState(true)
 
   
   const signInWithGoogle = () => {
@@ -39,12 +40,13 @@ const UserContext = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (loggedInUser) => {
       setUser(loggedInUser);
+      setLoading(false)  
       console.log("auth state changed", loggedInUser);
     });
     return () => unsubscribe();
   }, []);
 
-  const authInfo = { user, createUser, signIn, logOut, signInWithGoogle }; //ei destruction er karone onno component e useContext use kora jacche.
+  const authInfo = { user, createUser, signIn, logOut, signInWithGoogle, loading }; //ei destruction er karone onno component e useContext use kora jacche.
 
   const authValue = {};
   return (

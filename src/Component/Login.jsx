@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Context/UserContext";
 
 const Login = () => {
+  const navigate = useNavigate();
 
-  const {signIn} = useContext(authContext)
+  const { signIn } = useContext(authContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,18 +14,17 @@ const Login = () => {
     const password = form.password.value;
     // console.log(email, password);
 
-    form.reset()
+    form.reset();
 
     signIn(email, password)
-    .then((result) => {
-      const user = result.user
-      console.log("logged in ", user);
-      
-    }).catch((err) => {
-      console.error(err)
-    });
-
-
+      .then((result) => {
+        const user = result.user;
+        console.log("logged in ", user);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
   return (
     <div className="hero min-h-screen bg-base-200">
