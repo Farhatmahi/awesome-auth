@@ -16,7 +16,7 @@ const auth = getAuth(app);
 
 //it will create user, take the auth from this component and email password from register
 const UserContext = ({ children }) => {
-  const [user, setUser] = useState({ displayName: "Sana" }); //the user will change
+  const [user, setUser] = useState({}); //the user will change
 
   
   const signInWithGoogle = () => {
